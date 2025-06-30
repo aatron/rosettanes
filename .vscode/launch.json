@@ -1,0 +1,46 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'rosettanes'",
+            "internalConsoleOptions": "neverOpen",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=rosettanes",
+                    "--package=rosettanes"
+                ],
+                "filter": {
+                    "name": "rosettanes",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "RUST_BACKTRACE": "full"
+            },
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'rosettanes'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=rosettanes",
+                    "--package=rosettanes"
+                ],
+                "filter": {
+                    "name": "rosettanes",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+} 
